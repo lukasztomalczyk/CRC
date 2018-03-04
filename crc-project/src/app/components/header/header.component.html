@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="menu-container">
+      <div *ngFor="let position of menuPositions" class="menu-position">
+        <a [routerLink]="position.link">{{position.name}}</a>
+      </div>
+    </div>
+  </div>
+</div>

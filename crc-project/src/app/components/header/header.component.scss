@@ -1,0 +1,18 @@
+
+.menu-container{
+    display: inline-flex;
+    padding: 10px;
+    background: #f0f0f0;
+    width: 100%;
+    .menu-position {
+        padding-right: 10px;
+        padding-left: 10px;
+        border-right: 1px solid #ccc;
+    }
+    .menu-position a{
+       color:#333;
+    }
+    .menu-position a:hover{
+        color:#ff6200;
+     }
+}

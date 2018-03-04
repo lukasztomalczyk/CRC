@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-8">
+  <p *ngFor="let item of itemList">
+    <app-item [item]="item"></app-item>
+  </p></div>
+  <div class="col-md-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
