@@ -11,6 +11,7 @@ import { AddItemComponent } from './components/list/add-item/add-item.component'
 import { FormsModule } from '@angular/forms';
 import { RequestService } from './components/services/request.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserFormModuleModule } from './user-form-module/user-form-module.module';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {
@@ -35,7 +36,8 @@ const routes: Routes = [
     ),
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UserFormModuleModule
   ],
   providers: [ItemListService, RequestService],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@ export class RequestService {
     }
 
     getSomething() {
-        return this.http.get<any>('url');
+        return this.http.get<any>('https://angular2demo-9afa4.firebaseio.com/');
     }
 
     postSomething() {
