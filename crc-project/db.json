@@ -19,16 +19,79 @@
       ],
       "id": 2,
       "isLogin": true
+    },
+    {
+      "name": "magdalena czmok",
+      "login": "czmok",
+      "password": "czmok",
+      "roles": [
+        "user"
+      ],
+      "id": 3,
+      "isLogin": true
     }
   ],
   "requestes": [
     {
-      "id": 1,
-      "userName": "henryk",
       "serverName": "TEST",
-      "serverAddress":"server.crc.com",
-      "permission":"ADMINISTRATOR",
-      "additionalInfo":"Związane z...."
+      "serverAddress": "qew",
+      "permission": "READ ONLY",
+      "additionalInfo": "now",
+      "userName": "staszek",
+      "status": "In progress",
+      "id": 5
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qweqwe",
+      "userName": "staszek",
+      "status": "In progress",
+      "id": 6
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "234",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "234",
+      "userName": "staszek",
+      "status": "In progress",
+      "id": 7
+    },
+    {
+      "serverName": "PROD",
+      "serverAddress": "wer",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "wer",
+      "userName": "staszek",
+      "status": "In progress",
+      "id": 8
+    },
+    {
+      "serverName": "PROD",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "userName": "staszek",
+      "status": "In progress",
+      "id": 9
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "wewr",
+      "permission": "READ ONLY",
+      "userName": "czmok",
+      "status": "In progress",
+      "id": 10
+    },
+    {
+      "serverName": "PROD",
+      "serverAddress": "wer",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "werer",
+      "userName": "czmok",
+      "status": "In progress",
+      "id": 11
     }
   ],
   "profile": {
@@ -39,5 +102,10 @@
     "PROD",
     "ACC",
     "DEV"
+  ],
+  "permissions": [
+    "READ ONLY",
+    "ADMINISTRATOR",
+    "CUSTOM"
   ]
 }

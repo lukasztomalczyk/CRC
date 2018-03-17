@@ -4,5 +4,6 @@ export class PermissionModel{
     serverAddress: string;
     permission: string;
     additionalInfo: string;
+    status:string;
 }
 

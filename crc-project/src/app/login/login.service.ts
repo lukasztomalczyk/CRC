@@ -4,11 +4,11 @@ import { of } from "rxjs/observable/of";
 import { HttpClient } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { UserLoginModel } from "./user-login.model";
+import { Subject } from "rxjs/Subject";
 @Injectable()
 export class LoginService {
 
     private currentLoginUser: UserLoginModel;
-
     constructor(private http: HttpClient) {
 
     }
@@ -20,8 +20,8 @@ export class LoginService {
         return this.http.get<Array<UserLoginModel>>('http://localhost:3000/users', { params: params });
     }
 
-    getUserBy(id: string) {
-        return this.http.get<Array<UserLoginModel>>(`http://localhost:3000/users/${id}`);
+    getUserBy(id: string):Observable<UserLoginModel> {
+        return this.http.get<UserLoginModel>(`http://localhost:3000/users/${id}`);
     }
 
     changeLoging(user: UserLoginModel, isLogin: boolean) {
@@ -38,9 +38,7 @@ export class LoginService {
     }
 
     getCurrentLoginUser(): UserLoginModel {
-        return this.currentLoginUser
+        return this.currentLoginUser;
     }
-
-
 
 }

@@ -18,6 +18,9 @@ import { UserFormComponent } from './user-form-module/user-form/user-form.compon
 import { UserActionModuleModule } from './user-action-module/user-action-module.module';
 import { UserPermissionsComponent } from './user-action-module/user-permissions/user-permissions.component';
 import { UserRequestsComponent } from './user-action-module/user-requests/user-requests.component';
+import { WrapperRequestService } from './wrapper.request.service';
+import { Http, RequestOptions, XHRBackend } from '@angular/http';
+import { httpFactory } from './http-factory';
 const routes: Routes = [
   // { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -54,7 +57,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      routes,
+      routes,{ useHash: true}
     ),
     BrowserModule,
     FormsModule,
@@ -62,8 +65,8 @@ const routes: Routes = [
     UserFormModuleModule,
     UserActionModuleModule
   ],
-  exports:[RouterModule],
-  providers: [ItemListService, RequestService, LoginService],
+  exports: [RouterModule],
+  providers: [ItemListService, RequestService, LoginService, WrapperRequestService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
