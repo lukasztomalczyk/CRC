@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
+
+.btn-default{
+    font-family: 'Arial Normalny', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    background: #2983bf;
+    text-align: center;
+    line-height: normal;
+    color: white;
+}

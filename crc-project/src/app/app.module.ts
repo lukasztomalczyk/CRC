@@ -12,13 +12,33 @@ import { FormsModule } from '@angular/forms';
 import { RequestService } from './components/services/request.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormModuleModule } from './user-form-module/user-form-module.module';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { UserFormComponent } from './user-form-module/user-form/user-form.component';
+import { UserActionModuleModule } from './user-action-module/user-action-module.module';
+import { UserPermissionsComponent } from './user-action-module/user-permissions/user-permissions.component';
+import { UserRequestsComponent } from './user-action-module/user-requests/user-requests.component';
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  // { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   {
-    path: 'list', component: ListComponent,
-    children: [{ path: 'addItem', component: AddItemComponent }]
+    path: 'userForm/:userId', component: UserFormComponent,
+    children: [
+      { path: 'userRequestes', component: UserRequestsComponent },
+      { path: 'userPermissions', component: UserPermissionsComponent }]
   },
-  { path: '**', component: HomeComponent },
+
+  // {
+  //   path: 'list', component: ListComponent,
+  //   children: [{ path: 'addItem', component: AddItemComponent }]
+  // },
+
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  { path: '**', component: LoginComponent },
 ];
 
 @NgModule({
@@ -28,7 +48,9 @@ const routes: Routes = [
     ListComponent,
     ItemComponent,
     HeaderComponent,
-    AddItemComponent
+    AddItemComponent,
+    LoginComponent,
+
   ],
   imports: [
     RouterModule.forRoot(
@@ -37,9 +59,11 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    UserFormModuleModule
+    UserFormModuleModule,
+    UserActionModuleModule
   ],
-  providers: [ItemListService, RequestService],
+  exports:[RouterModule],
+  providers: [ItemListService, RequestService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

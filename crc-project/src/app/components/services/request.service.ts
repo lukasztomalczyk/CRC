@@ -20,7 +20,9 @@ export class RequestService {
     }
 
     postSomething() {
-        return this.http.post<any>('url', {});
+        return this.http.put<any>('http://localhost:3000/posts/1', {
+        "title": "jdupa",
+        "author": "typicode"});
     }
 
     deleteSomething() {

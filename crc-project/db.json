@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "name": "Henryk Ciekawski",
+      "login": "henryk",
+      "password": "henryk",
+      "roles": [
+        "approver"
+      ],
+      "id": 1,
+      "isLogin": false
+    },
+    {
+      "name": "Staszek Upierdliwy",
+      "login": "staszek",
+      "password": "staszek",
+      "roles": [
+        "user"
+      ],
+      "id": 2,
+      "isLogin": true
+    }
+  ],
+  "requestes": [
+    {
+      "id": 1,
+      "userName": "henryk",
+      "serverName": "TEST",
+      "serverAddress":"server.crc.com",
+      "permission":"ADMINISTRATOR",
+      "additionalInfo":"Związane z...."
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "servers": [
+    "TEST",
+    "PROD",
+    "ACC",
+    "DEV"
+  ]
+}
