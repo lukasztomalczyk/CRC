@@ -2,14 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { ListComponent } from './components/list/list.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ItemComponent } from './components/list/item/item.component';
-import { ItemListService } from './components/list/list.service';
-import { AddItemComponent } from './components/list/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
-import { RequestService } from './components/services/request.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormModuleModule } from './user-form-module/user-form-module.module';
 import { LoginComponent } from './login/login.component';
@@ -44,11 +37,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ListComponent,
-    ItemComponent,
-    HeaderComponent,
-    AddItemComponent,
     LoginComponent,
 
   ],
@@ -64,7 +52,7 @@ const routes: Routes = [
     ApproverActionModuleModule
   ],
   exports: [RouterModule],
-  providers: [ItemListService, RequestService, LoginService, WrapperRequestService,],
+  providers: [LoginService, WrapperRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

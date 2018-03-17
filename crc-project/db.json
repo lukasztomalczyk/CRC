@@ -66,7 +66,7 @@
       "permission": "ADMINISTRATOR",
       "additionalInfo": "wer",
       "userName": "staszek",
-      "status": "In progress",
+      "status": "Approve",
       "id": 8
     },
     {
@@ -74,7 +74,7 @@
       "serverAddress": "qwe",
       "permission": "ADMINISTRATOR",
       "userName": "staszek",
-      "status": "In progress",
+      "status": "Approve",
       "id": 9
     },
     {
