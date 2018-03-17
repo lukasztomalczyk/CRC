@@ -8,7 +8,6 @@ import { RequestModel } from "./approver-action-module/requests/request.model";
 
 @Injectable()
 export class WrapperRequestService {
-    logedUser = new Subject<any>();
     constructor(private http: HttpClient, private loginService: LoginService) {
 
     }
@@ -29,6 +28,10 @@ export class WrapperRequestService {
         let updatedRequest = request;
         updatedRequest.status = "Reject";
         return updatedRequest;
+    }
+
+    getCurrentUser(){
+        return this.loginService.getCurrentLoginUser();
     }
 
 }

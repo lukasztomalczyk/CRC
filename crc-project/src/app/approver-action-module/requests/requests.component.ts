@@ -26,13 +26,25 @@ export class RequestsComponent implements OnInit {
   accept(request: RequestModel) {
     this.requestsService.approve(request).subscribe((requestes) => {
       this.getRequests();
+      this.provision(request);
     })
   }
 
   reject(request: RequestModel) {
     this.requestsService.reject(request).subscribe((requestes) => {
       this.getRequests();
+
     })
+  }
+
+  provision(request: RequestModel) {
+    this.requestsService.provisionRequest(request).subscribe((requestes) => {
+      this.getRequests();
+    })
+  }
+
+  isAcctionFinished(status) {
+    return status == 'In progress';
   }
 
 }

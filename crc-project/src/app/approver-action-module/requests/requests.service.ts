@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { WrapperRequestService } from "../../wrapper.request.service";
 import { PermissionModel } from "../../user-action-module/user-requests/permission.model";
-import { RequestModel } from "./request.model";
+import { RequestModel, ProvisionedPermissionstModel } from "./request.model";
 
 @Injectable()
 export class RequestsService {
@@ -23,5 +23,10 @@ export class RequestsService {
     reject(requestedPermission: RequestModel) {
         let request = this.wrapperRequestService.reject(requestedPermission);
         return this.http.put<string>(`http://localhost:3000/requestes/${request.id}`, requestedPermission);
+    }
+
+    provisionRequest(request: RequestModel) {
+        let provisionRequest = new ProvisionedPermissionstModel(request);
+        return this.http.post<any>(`http://localhost:3000/provisioned/`, provisionRequest.provisionRequst);
     }
 }

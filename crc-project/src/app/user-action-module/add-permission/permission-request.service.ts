@@ -21,9 +21,9 @@ export class AddPermissionService {
     }
 
     add(request: PermissionModel) {
-
         let wrappedRequest = this.wrapperService.permission(request);
         return this.http.post<PermissionModel>(`http://localhost:3000/requestes/`, wrappedRequest);
     }
+    
 
 }

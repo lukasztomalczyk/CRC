@@ -9,9 +9,10 @@ export class UserRequestService {
 
     constructor(private http: HttpClient, private wrapperRequestService: WrapperRequestService) { }
 
-    getPermissionRequests(currentLogin: string): Observable<Array<PermissionModel>> {
+    getPermissionRequests(): Observable<Array<PermissionModel>> {
+        let currentLogInUser = this.wrapperRequestService.getCurrentUser();
         let params = new HttpParams();
-        params = params.append('userName', currentLogin);
+        params = params.append('userName', currentLogInUser.login);
         return this.http.get<Array<PermissionModel>>(`http://localhost:3000/requestes`, { params: params });
     }
 

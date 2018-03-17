@@ -7,6 +7,7 @@ import { AddPermissionComponent } from './add-permission/add-permission.componen
 import { AddPermissionService } from './add-permission/permission-request.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { RequestsService } from './user-permissions/requests.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +15,6 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   declarations: [UserPermissionsComponent, UserRequestsComponent, AddPermissionComponent],
   exports: [UserPermissionsComponent, UserRequestsComponent],
-  providers: [UserRequestService,AddPermissionService]
+  providers: [UserRequestService, AddPermissionService, RequestsService]
 })
 export class UserActionModuleModule { }

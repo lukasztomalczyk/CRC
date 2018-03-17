@@ -1,5 +1,4 @@
 <table class="table">
-  
     <thead>
         <tr>
           <th>Id</th>
@@ -21,10 +20,10 @@
         <td>{{request.additionalInfo}}</td>
         <td>{{request.userName}}</td>
         <td>{{request.status}}</td>
-        <td>
+        <td *ngIf="isAcctionFinished(request.status)">
             <button class="btn btn-danger"  (click)="reject(request)">Reject</button>
         </td>
-        <td>
+        <td *ngIf="isAcctionFinished(request.status)">
             <button class="btn btn-primary"  (click)="accept(request)">Approve</button>
         </td>
     </tr>

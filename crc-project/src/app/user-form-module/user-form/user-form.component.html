@@ -21,7 +21,7 @@
 
         </div>
     </div>
-    <div class="manage-container">
+    <div class="manage-container" *ngIf="currentUser.isLogin!=undefined">
         <router-outlet></router-outlet>
     </div>
 
