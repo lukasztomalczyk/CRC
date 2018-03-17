@@ -21,21 +21,18 @@ import { UserRequestsComponent } from './user-action-module/user-requests/user-r
 import { WrapperRequestService } from './wrapper.request.service';
 import { Http, RequestOptions, XHRBackend } from '@angular/http';
 import { httpFactory } from './http-factory';
+import { ApproverActionModuleModule } from './approver-action-module/approver-action-module.module';
+import { RequestsComponent } from './approver-action-module/requests/requests.component';
+
 const routes: Routes = [
-  // { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'userForm/:userId', component: UserFormComponent,
     children: [
       { path: 'userRequestes', component: UserRequestsComponent },
-      { path: 'userPermissions', component: UserPermissionsComponent }]
+      { path: 'userPermissions', component: UserPermissionsComponent },
+      { path: 'requests', component: RequestsComponent }]
   },
-
-  // {
-  //   path: 'list', component: ListComponent,
-  //   children: [{ path: 'addItem', component: AddItemComponent }]
-  // },
-
   {
     path: '',
     redirectTo: '/login',
@@ -63,7 +60,8 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     UserFormModuleModule,
-    UserActionModuleModule
+    UserActionModuleModule,
+    ApproverActionModuleModule
   ],
   exports: [RouterModule],
   providers: [ItemListService, RequestService, LoginService, WrapperRequestService,],

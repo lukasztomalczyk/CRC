@@ -1,0 +1,32 @@
+<table class="table">
+  
+    <thead>
+        <tr>
+          <th>Id</th>
+            <th>Server Name</th>
+            <th>Server Address</th>
+            <th>Permission</th>
+            <th>Additional Info</th>
+            <th>User Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let request of usersRequestes">
+        <td>{{request.id}}</td>
+        <td>{{request.serverName}}</td>
+        <td>{{request.serverAddress}}</td>
+        <td>{{request.permission}}</td>
+        <td>{{request.additionalInfo}}</td>
+        <td>{{request.userName}}</td>
+        <td>{{request.status}}</td>
+        <td>
+            <button type="button"  (click)="reject(request)">Reject</button>
+        </td>
+        <td>
+            <button type="button"  (click)="accept(request)">Accept</button>
+        </td>
+    </tr>
+</tbody>
+</table>

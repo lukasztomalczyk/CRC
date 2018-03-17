@@ -1,13 +1,26 @@
 <app-add-permission (addedPermission)="addedPermissionListener($event)"></app-add-permission>
 <table class="table">
-    <tbody>
+  
+        <thead>
+            <tr>
+                <th>Server Name</th>
+                <th>Server Address</th>
+                <th>Permission</th>
+                <th>Additional Info</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
         <tr *ngFor="let permission of userPermissions">
             <td>{{permission.serverName}}</td>
             <td>{{permission.serverAddress}}</td>
             <td>{{permission.permission}}</td>
             <td>{{permission.additionalInfo}}</td>
             <td>{{permission.status}}</td>
-            <td><button type="button" class="close" (click)="remove(permission.id)">&times;</button></td>
+            <td>
+                <button type="button" class="close" (click)="remove(permission.id)">&times;</button>
+            </td>
         </tr>
     </tbody>
 </table>

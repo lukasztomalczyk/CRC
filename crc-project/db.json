@@ -18,14 +18,15 @@
         "user"
       ],
       "id": 2,
-      "isLogin": true
+      "isLogin": false
     },
     {
       "name": "magdalena czmok",
       "login": "czmok",
       "password": "czmok",
       "roles": [
-        "user"
+        "user",
+        "approver"
       ],
       "id": 3,
       "isLogin": true
@@ -38,7 +39,7 @@
       "permission": "READ ONLY",
       "additionalInfo": "now",
       "userName": "staszek",
-      "status": "In progress",
+      "status": "Approve",
       "id": 5
     },
     {
@@ -47,7 +48,7 @@
       "permission": "ADMINISTRATOR",
       "additionalInfo": "qweqwe",
       "userName": "staszek",
-      "status": "In progress",
+      "status": "Approve",
       "id": 6
     },
     {
@@ -56,7 +57,7 @@
       "permission": "ADMINISTRATOR",
       "additionalInfo": "234",
       "userName": "staszek",
-      "status": "In progress",
+      "status": "Reject",
       "id": 7
     },
     {
@@ -77,21 +78,49 @@
       "id": 9
     },
     {
-      "serverName": "TEST",
-      "serverAddress": "wewr",
-      "permission": "READ ONLY",
-      "userName": "czmok",
-      "status": "In progress",
-      "id": 10
-    },
-    {
       "serverName": "PROD",
       "serverAddress": "wer",
       "permission": "ADMINISTRATOR",
-      "additionalInfo": "werer",
+      "additionalInfo": "wer",
       "userName": "czmok",
       "status": "In progress",
-      "id": 11
+      "id": 12
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "In progress",
+      "id": 13
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "In progress",
+      "id": 14
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "READ ONLY",
+      "additionalInfo": "qwe",
+      "userName": "staszek",
+      "status": "In progress",
+      "id": 15
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "teraz",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "staszek",
+      "status": "Approve",
+      "id": 16
     }
   ],
   "profile": {
