@@ -9,7 +9,7 @@ export class UserRequestService {
 
     constructor(private http: HttpClient, private wrapperRequestService: WrapperRequestService) { }
 
-    getPermissionRequests(): Observable<Array<PermissionModel>> {
+    getCurrentRequests(): Observable<Array<PermissionModel>> {
         let currentLogInUser = this.wrapperRequestService.getCurrentUser();
         let params = new HttpParams();
         params = params.append('userName', currentLogInUser.login);

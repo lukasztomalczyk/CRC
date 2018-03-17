@@ -12,14 +12,14 @@
             </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let permission of userPermissions">
-            <td>{{permission.serverName}}</td>
-            <td>{{permission.serverAddress}}</td>
-            <td>{{permission.permission}}</td>
-            <td>{{permission.additionalInfo}}</td>
-            <td>{{permission.status}}</td>
+        <tr *ngFor="let request of currentRequests">
+            <td>{{request.serverName}}</td>
+            <td>{{request.serverAddress}}</td>
+            <td>{{request.permission}}</td>
+            <td>{{request.additionalInfo}}</td>
+            <td>{{request.status}}</td>
             <td>
-                <button type="button" class="close" (click)="remove(permission.id)">&times;</button>
+                <button type="button" class="close" (click)="remove(request.id)">&times;</button>
             </td>
         </tr>
     </tbody>

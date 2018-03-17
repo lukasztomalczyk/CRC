@@ -9,27 +9,28 @@ import { PermissionModel } from './permission.model';
 })
 export class UserRequestsComponent implements OnInit {
 
-  userPermissions: Array<PermissionModel> = [];
+  currentRequests: Array<PermissionModel> = [];
   userId: string;
   constructor(private userRequestService: UserRequestService) { }
 
   ngOnInit() {
-      this.getUserPermissions();
+      this.getUserPermissionRequests();
   }
-  getUserPermissions(){
-      this.userRequestService.getPermissionRequests().subscribe((permissions) => {
-        this.userPermissions = permissions;
+
+  getUserPermissionRequests(){
+      this.userRequestService.getCurrentRequests().subscribe((permissions) => {
+        this.currentRequests = permissions;
       });
   }
 
   remove(id){
     this.userRequestService.remove(id).subscribe(()=>{
-      this.getUserPermissions();
-    })
+      this.getUserPermissionRequests();
+    });
   }
 
   addedPermissionListener(info){
     console.log(info);
-    this.getUserPermissions();
+    this.getUserPermissionRequests();
   }
 }
