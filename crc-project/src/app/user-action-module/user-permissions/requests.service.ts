@@ -12,7 +12,7 @@ export class RequestsService {
     constructor(private http: HttpClient, private wrapperService: WrapperRequestService) { }
 
     getPermissions(){
-        let user = this.wrapperService.getCurrentUser();
+        
         let currentLogInUser = this.wrapperService.getCurrentUser();
         let params = new HttpParams();
         params = params.append('userName', currentLogInUser.login);

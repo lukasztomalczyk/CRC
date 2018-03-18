@@ -19,7 +19,6 @@ export class UserFormComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.route.params.subscribe((params: Params) => {
       this.userId = params['userId'];
       this.loginService.getUserBy(this.userId).subscribe((user) => {

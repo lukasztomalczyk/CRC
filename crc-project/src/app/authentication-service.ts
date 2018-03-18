@@ -3,17 +3,19 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
-
-export class Permissions {
-    canActivate(id: string, loginService: LoginService, router: Router) {
-        return loginService.isUserLogIn(id).map(user => {
+@Injectable()
+export class Login {
+    constructor(private loginService: LoginService, private router: Router){
+    }
+    whenUserIsNotLogin(id: string) {
+        return this.loginService.isUserLogIn(id).map(user => {
             if (user.isLogin) {
-                loginService.setCurrentLoginUser(user);
+                this.loginService.setCurrentLoginUser(user);
                 return true;
             }
             else {
-                router.navigate(['/login']);
-                return false
+                this.router.navigate(['/login']);
+                return false;
             }
         });
     }
@@ -21,13 +23,13 @@ export class Permissions {
 
 @Injectable()
 export class CanActivateUser implements CanActivate {
-    constructor(private permissions: Permissions, private loginService: LoginService, private router: Router) { }
+    constructor(private permissions: Login) { }
 
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot,
 
     ): Observable<boolean> | Promise<boolean> | boolean {
-        return this.permissions.canActivate(route.params.userId, this.loginService, this.router);
+        return this.permissions.whenUserIsNotLogin(route.params.userId);
     }
 }

@@ -16,7 +16,7 @@ import { Http, RequestOptions, XHRBackend } from '@angular/http';
 import { ApproverActionModuleModule } from './approver-action-module/approver-action-module.module';
 import { RequestsComponent } from './approver-action-module/requests/requests.component';
 import { Observable } from 'rxjs/Observable';
-import { CanActivateUser, Permissions } from './authentication-service';
+import { CanActivateUser, Login } from './authentication-service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -53,7 +53,7 @@ const routes: Routes = [
     ApproverActionModuleModule
   ],
   exports: [RouterModule],
-  providers: [LoginService, WrapperRequestService, CanActivateUser, Permissions],
+  providers: [LoginService, WrapperRequestService, CanActivateUser, Login],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
