@@ -5,9 +5,10 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 
 export class Permissions {
-    canActivate(id: string, loginSerivce: LoginService, router: Router) {
-        return loginSerivce.isUserLogIn(id).map(user => {
+    canActivate(id: string, loginService: LoginService, router: Router) {
+        return loginService.isUserLogIn(id).map(user => {
             if (user.isLogin) {
+                loginService.setCurrentLoginUser(user);
                 return true;
             }
             else {

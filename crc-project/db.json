@@ -141,6 +141,23 @@
       "userName": "czmok",
       "status": "Approve",
       "id": 10
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "READ ONLY",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "Approve",
+      "id": 11
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "staszek",
+      "permission": "READ ONLY",
+      "userName": "staszek",
+      "status": "Approve",
+      "id": 12
     }
   ],
   "provisioned": [
@@ -214,6 +231,23 @@
       "userName": "czmok",
       "status": "Provisioned",
       "id": 10
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "READ ONLY",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "Provisioned",
+      "id": 11
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "staszek",
+      "permission": "READ ONLY",
+      "userName": "staszek",
+      "status": "Provisioned",
+      "id": 12
     }
   ],
   "profile": {

@@ -19,33 +19,24 @@ export class UserFormComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+
     this.route.params.subscribe((params: Params) => {
       this.userId = params['userId'];
-      this.checkIsUserLogin(this.userId);
+      this.loginService.getUserBy(this.userId).subscribe((user) => {
+        this.currentUser = this.loginService.getCurrentLoginUser();
+        this.getRoles();
+      })
     })
-  }
-
-  checkIsUserLogin(id: string) {
-    this.loginService.getUserBy(id).subscribe((user) => {
-      this.setValuesAfterLogin(user);
-    })
-  }
-
-  setValuesAfterLogin(user) {
-    this.loginService.setCurrentLoginUser(user);
-    this.currentUser = this.loginService.getCurrentLoginUser();
-    this.getRoles(user.login);
   }
 
   logOut() {
     this.loginService.changeLoging(this.currentUser, false).subscribe(() => {
-      this.checkIsUserLogin(this.currentUser.id);
       this.router.navigate(['/login'])
     })
   }
 
-  getRoles(login: string) {
-    this.loginService.getUserRoles(login).subscribe((data) => {
+  getRoles() {
+    this.loginService.getUserRoles(this.currentUser.login).subscribe((data) => {
       if (data) {
         this.roles = data[0].roles;
       }
