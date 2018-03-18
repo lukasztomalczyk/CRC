@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormModuleModule } from './user-form-module/user-form-module.module';
@@ -13,14 +13,15 @@ import { UserPermissionsComponent } from './user-action-module/user-permissions/
 import { UserRequestsComponent } from './user-action-module/user-requests/user-requests.component';
 import { WrapperRequestService } from './wrapper.request.service';
 import { Http, RequestOptions, XHRBackend } from '@angular/http';
-import { httpFactory } from './http-factory';
 import { ApproverActionModuleModule } from './approver-action-module/approver-action-module.module';
 import { RequestsComponent } from './approver-action-module/requests/requests.component';
+import { Observable } from 'rxjs/Observable';
+import { CanActivateUser, Permissions } from './authentication-service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path: 'userForm/:userId', component: UserFormComponent,
+    path: 'userForm/:userId', component: UserFormComponent, canActivate: [CanActivateUser],
     children: [
       { path: 'userRequestes', component: UserRequestsComponent },
       { path: 'userPermissions', component: UserPermissionsComponent },
@@ -42,7 +43,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      routes,{ useHash: true}
+      routes, { useHash: true }
     ),
     BrowserModule,
     FormsModule,
@@ -52,7 +53,7 @@ const routes: Routes = [
     ApproverActionModuleModule
   ],
   exports: [RouterModule],
-  providers: [LoginService, WrapperRequestService],
+  providers: [LoginService, WrapperRequestService, CanActivateUser, Permissions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

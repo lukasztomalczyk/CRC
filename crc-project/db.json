@@ -4,9 +4,6 @@
       "name": "Henryk Ciekawski",
       "login": "henryk",
       "password": "henryk",
-      "roles": [
-        "approver"
-      ],
       "id": 1,
       "isLogin": false
     },
@@ -14,9 +11,6 @@
       "name": "Staszek Upierdliwy",
       "login": "staszek",
       "password": "staszek",
-      "roles": [
-        "user"
-      ],
       "id": 2,
       "isLogin": true
     },
@@ -24,12 +18,47 @@
       "name": "magdalena czmok",
       "login": "czmok",
       "password": "czmok",
+      "id": 3,
+      "isLogin": true
+    },
+    {
+      "name": "admin",
+      "login": "admin",
+      "password": "admin",
+      "id": 4,
+      "isLogin": false
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "login": "admin",
       "roles": [
         "user",
         "approver"
-      ],
+      ]
+    },
+    {
+      "id": 2,
+      "login": "czmok",
+      "roles": [
+        "user",
+        "approver"
+      ]
+    },
+    {
       "id": 3,
-      "isLogin": false
+      "login": "staszek",
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 4,
+      "login": "henryk",
+      "roles": [
+        "approver"
+      ]
     }
   ],
   "requestes": [
@@ -71,12 +100,47 @@
     },
     {
       "serverName": "TEST",
-      "serverAddress": "wer",
+      "serverAddress": "admin",
       "permission": "ADMINISTRATOR",
+      "additionalInfo": "ewr",
+      "userName": "admin",
+      "status": "Reject",
+      "id": 6
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "wer",
+      "permission": "READ ONLY",
       "additionalInfo": "wer",
+      "userName": "admin",
+      "status": "Approve",
+      "id": 7
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "Approve",
+      "id": 8
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "staszek",
+      "permission": "READ ONLY",
       "userName": "staszek",
       "status": "Approve",
-      "id": 5
+      "id": 9
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "Approve",
+      "id": 10
     }
   ],
   "provisioned": [
@@ -115,6 +179,41 @@
       "userName": "staszek",
       "status": "Provisioned",
       "id": 5
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "wer",
+      "permission": "READ ONLY",
+      "additionalInfo": "wer",
+      "userName": "admin",
+      "status": "Provisioned",
+      "id": 7
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "Provisioned",
+      "id": 8
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "staszek",
+      "permission": "READ ONLY",
+      "userName": "staszek",
+      "status": "Provisioned",
+      "id": 9
+    },
+    {
+      "serverName": "TEST",
+      "serverAddress": "qwe",
+      "permission": "ADMINISTRATOR",
+      "additionalInfo": "qwe",
+      "userName": "czmok",
+      "status": "Provisioned",
+      "id": 10
     }
   ],
   "profile": {

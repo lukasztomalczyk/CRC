@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { UserLoginModel } from "./user-login.model";
 import { Subject } from "rxjs/Subject";
+import { RoleModel } from "../user-form-module/user-form/role.model";
 @Injectable()
 export class LoginService {
 
@@ -20,7 +21,7 @@ export class LoginService {
         return this.http.get<Array<UserLoginModel>>('http://localhost:3000/users', { params: params });
     }
 
-    getUserBy(id: string):Observable<UserLoginModel> {
+    getUserBy(id: string): Observable<UserLoginModel> {
         return this.http.get<UserLoginModel>(`http://localhost:3000/users/${id}`);
     }
 
@@ -39,6 +40,12 @@ export class LoginService {
 
     getCurrentLoginUser(): UserLoginModel {
         return this.currentLoginUser;
+    }
+
+    getUserRoles(login: string): Observable<Array<RoleModel>> {
+        let params = new HttpParams();
+        params = params.append('login', login);
+        return this.http.get<Array<RoleModel>>('http://localhost:3000/roles', { params: params });
     }
 
 }
