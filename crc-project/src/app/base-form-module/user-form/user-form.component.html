@@ -13,12 +13,12 @@
             <p>
                 <a [routerLink]="['/userForm/',currentUser.id,'userRequestes']">My requestes</a>
             </p>
+            
         </div>
         <div *ngIf="isApprover()">
             <p>
                 <a [routerLink]="['/userForm/',currentUser.id,'requests']">Users Requests</a>
             </p>
-
         </div>
     </div>
     <div class="manage-container" *ngIf="currentUser.isLogin!=undefined">
