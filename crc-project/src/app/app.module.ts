@@ -4,10 +4,10 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UserFormModuleModule } from './user-form-module/user-form-module.module';
+
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
-import { UserFormComponent } from './user-form-module/user-form/user-form.component';
+
 import { UserActionModuleModule } from './user-action-module/user-action-module.module';
 import { UserPermissionsComponent } from './user-action-module/user-permissions/user-permissions.component';
 import { UserRequestsComponent } from './user-action-module/user-requests/user-requests.component';
@@ -17,6 +17,9 @@ import { ApproverActionModuleModule } from './approver-action-module/approver-ac
 import { RequestsComponent } from './approver-action-module/requests/requests.component';
 import { Observable } from 'rxjs/Observable';
 import { CanActivateUser, Login } from './authentication-service';
+import { UserFormComponent } from './base-form-module/user-form/user-form.component';
+import { BaseFormModule } from './base-form-module/base-form-module.module';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -39,7 +42,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-
   ],
   imports: [
     RouterModule.forRoot(
@@ -48,7 +50,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    UserFormModuleModule,
+    BaseFormModule,
     UserActionModuleModule,
     ApproverActionModuleModule
   ],

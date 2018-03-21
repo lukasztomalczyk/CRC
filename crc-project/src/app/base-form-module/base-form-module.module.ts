@@ -16,4 +16,4 @@ import { Observable } from 'rxjs/Observable';
   declarations: [UserFormComponent],
   providers:[]
 })
-export class UserFormModuleModule { }
+export class BaseFormModule { }

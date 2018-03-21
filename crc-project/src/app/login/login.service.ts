@@ -5,8 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { UserLoginModel } from "./user-login.model";
 import { Subject } from "rxjs/Subject";
-import { RoleModel } from "../user-form-module/user-form/role.model";
+
 import { Base } from "../../environments/base";
+import { RoleModel } from "../base-form-module/user-form/role.model";
 @Injectable()
 export class LoginService {
     baseUri = Base.baseUri;
