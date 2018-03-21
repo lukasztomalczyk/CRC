@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   private password: string;
   constructor(private loginService: LoginService, private router: Router) { }
 
+  //3.b) Utworzyć osobny komponent do logowania, które będzie przyjmował 2 wartości login i hasło
+
   ngOnInit() {
   }
 
@@ -23,7 +25,6 @@ export class LoginComponent implements OnInit {
         });
       }
     })
-
   }
 
 }

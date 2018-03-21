@@ -22,7 +22,7 @@ export class LoginService {
         params = params.append('password', password);
         return this.http.get<Array<UserLoginModel>>(`${this.baseUri}/users`, { params: params });
     }
-
+ 
     getUserBy(id: string): Observable<UserLoginModel> {
         return this.http.get<UserLoginModel>(`${this.baseUri}/users/${id}`);
     }
@@ -31,7 +31,7 @@ export class LoginService {
         user.isLogin = isLogin;
         return this.http.put<any>(`${this.baseUri}/users/${user.id}`, user);
     }
-
+ 
     isUserLogIn(id: string): Observable<UserLoginModel> {
         return this.http.get<any>(`${this.baseUri}/users/${id}`);
     }
