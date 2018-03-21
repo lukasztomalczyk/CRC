@@ -18,7 +18,7 @@
         <td>{{request.serverAddress}}</td>
         <td>{{request.permission}}</td>
         <td>{{request.additionalInfo}}</td>
-        <td>{{request.userName}}</td>
+        <td>{{request.name}}</td>
         <td>{{request.status}}</td>
         <td *ngIf="isAcctionFinished(request.status)">
             <button class="btn btn-danger"  (click)="reject(request)">Reject</button>

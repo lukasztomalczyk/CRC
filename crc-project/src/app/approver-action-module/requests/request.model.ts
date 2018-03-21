@@ -7,7 +7,7 @@ export class RequestModel extends PermissionModel {
 export class ProvisionedPermissionstModel extends RequestModel {
     provisionRequst = new RequestModel();
     constructor(private request: RequestModel) {
-        super()
+        super();
         this.provisionRequst = request;
         this.provisionRequst.status = "Provisioned";
     }

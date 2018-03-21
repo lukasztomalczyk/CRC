@@ -5,8 +5,8 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 @Injectable()
 export class Login {
-    constructor(private loginService: LoginService, private router: Router){
-    }
+    constructor(private loginService: LoginService, private router: Router){}
+    
     whenUserIsNotLogin(id: string) {
         return this.loginService.isUserLogIn(id).map(user => {
             if (user.isLogin) {
@@ -23,13 +23,13 @@ export class Login {
 
 @Injectable()
 export class CanActivateUser implements CanActivate {
-    constructor(private permissions: Login) { }
+    constructor(private login: Login) { }
 
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot,
 
     ): Observable<boolean> | Promise<boolean> | boolean {
-        return this.permissions.whenUserIsNotLogin(route.params.userId);
+        return this.login.whenUserIsNotLogin(route.params.userId);
     }
 }

@@ -1,9 +1,10 @@
-export class PermissionModel{
-    userName: string;
+export class PermissionModel {
+    name: string;
     serverName: string;
     serverAddress: string;
     permission: string;
     additionalInfo: string;
-    status:string;
+    status: string;
+    login: string;
 }
 

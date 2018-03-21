@@ -13,7 +13,7 @@ export class WrapperRequestService {
     }
 
     permission(request: PermissionModel): PermissionModel {
-        request.userName = this.loginService.getCurrentLoginUser().login;
+        request.login = this.loginService.getCurrentLoginUser().login;
         request.status = "In progress"
         return request;
     }

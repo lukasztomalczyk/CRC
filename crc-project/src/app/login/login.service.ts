@@ -6,9 +6,10 @@ import { HttpParams } from '@angular/common/http';
 import { UserLoginModel } from "./user-login.model";
 import { Subject } from "rxjs/Subject";
 import { RoleModel } from "../user-form-module/user-form/role.model";
+import { Base } from "../../environments/base";
 @Injectable()
 export class LoginService {
-
+    baseUri = Base.baseUri;
     private currentLoginUser: UserLoginModel;
     constructor(private http: HttpClient) {
 
@@ -18,20 +19,20 @@ export class LoginService {
         let params = new HttpParams();
         params = params.append('user', login);
         params = params.append('password', password);
-        return this.http.get<Array<UserLoginModel>>('http://localhost:3000/users', { params: params });
+        return this.http.get<Array<UserLoginModel>>(`${this.baseUri}/users`, { params: params });
     }
 
     getUserBy(id: string): Observable<UserLoginModel> {
-        return this.http.get<UserLoginModel>(`http://localhost:3000/users/${id}`);
+        return this.http.get<UserLoginModel>(`${this.baseUri}/users/${id}`);
     }
 
     changeLoging(user: UserLoginModel, isLogin: boolean) {
         user.isLogin = isLogin;
-        return this.http.put<any>(`http://localhost:3000/users/${user.id}`, user);
+        return this.http.put<any>(`${this.baseUri}/users/${user.id}`, user);
     }
 
     isUserLogIn(id: string): Observable<UserLoginModel> {
-        return this.http.get<any>(`http://localhost:3000/users/${id}`);
+        return this.http.get<any>(`${this.baseUri}/users/${id}`);
     }
 
     setCurrentLoginUser(user: UserLoginModel): void {
@@ -45,7 +46,7 @@ export class LoginService {
     getUserRoles(login: string): Observable<Array<RoleModel>> {
         let params = new HttpParams();
         params = params.append('login', login);
-        return this.http.get<Array<RoleModel>>('http://localhost:3000/roles', { params: params });
+        return this.http.get<Array<RoleModel>>(`${this.baseUri}/roles`, { params: params });
     }
 
 }

@@ -64,199 +64,46 @@
   "requestes": [
     {
       "serverName": "TEST",
-      "serverAddress": "wer",
+      "serverAddress": "testlogin",
       "permission": "READ ONLY",
-      "additionalInfo": "wer",
-      "userName": "czmok",
-      "status": "Reject",
+      "login": "czmok",
+      "status": "Approve",
       "id": 1
     },
     {
       "serverName": "TEST",
-      "serverAddress": "wer",
+      "serverAddress": "staszek",
       "permission": "READ ONLY",
-      "additionalInfo": "wer",
-      "userName": "czmok",
-      "status": "Approve",
+      "additionalInfo": "asd",
+      "login": "staszek",
+      "status": "Reject",
       "id": 2
     },
     {
       "serverName": "TEST",
-      "serverAddress": "qwe",
+      "serverAddress": "staszekapprovw",
       "permission": "READ ONLY",
-      "additionalInfo": "eqwe",
-      "userName": "czmok",
+      "login": "staszek",
       "status": "Approve",
       "id": 3
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "3",
-      "permission": "READ ONLY",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Approve",
-      "id": 4
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "admin",
-      "permission": "ADMINISTRATOR",
-      "additionalInfo": "ewr",
-      "userName": "admin",
-      "status": "Reject",
-      "id": 6
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "wer",
-      "permission": "READ ONLY",
-      "additionalInfo": "wer",
-      "userName": "admin",
-      "status": "Approve",
-      "id": 7
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "ADMINISTRATOR",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Approve",
-      "id": 8
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszek",
-      "permission": "READ ONLY",
-      "userName": "staszek",
-      "status": "Approve",
-      "id": 9
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "ADMINISTRATOR",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Approve",
-      "id": 10
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "READ ONLY",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Approve",
-      "id": 11
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszek",
-      "permission": "READ ONLY",
-      "userName": "staszek",
-      "status": "Approve",
-      "id": 12
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "READ ONLY",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "In progress",
-      "id": 13
     }
   ],
   "provisioned": [
     {
       "serverName": "TEST",
-      "serverAddress": "wer",
+      "serverAddress": "testlogin",
       "permission": "READ ONLY",
-      "additionalInfo": "wer",
-      "userName": "czmok",
+      "login": "czmok",
       "status": "Provisioned",
-      "id": 2
+      "id": 1
     },
     {
       "serverName": "TEST",
-      "serverAddress": "qwe",
+      "serverAddress": "staszekapprovw",
       "permission": "READ ONLY",
-      "additionalInfo": "eqwe",
-      "userName": "czmok",
+      "login": "staszek",
       "status": "Provisioned",
       "id": 3
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "3",
-      "permission": "READ ONLY",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Provisioned",
-      "id": 4
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "wer",
-      "permission": "ADMINISTRATOR",
-      "additionalInfo": "wer",
-      "userName": "staszek",
-      "status": "Provisioned",
-      "id": 5
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "wer",
-      "permission": "READ ONLY",
-      "additionalInfo": "wer",
-      "userName": "admin",
-      "status": "Provisioned",
-      "id": 7
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "ADMINISTRATOR",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Provisioned",
-      "id": 8
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszek",
-      "permission": "READ ONLY",
-      "userName": "staszek",
-      "status": "Provisioned",
-      "id": 9
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "ADMINISTRATOR",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Provisioned",
-      "id": 10
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "qwe",
-      "permission": "READ ONLY",
-      "additionalInfo": "qwe",
-      "userName": "czmok",
-      "status": "Provisioned",
-      "id": 11
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszek",
-      "permission": "READ ONLY",
-      "userName": "staszek",
-      "status": "Provisioned",
-      "id": 12
     }
   ],
   "profile": {
