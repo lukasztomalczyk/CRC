@@ -1,28 +1,31 @@
-<div class="user-information-container">
-    <div class="empty"></div>
-    <div class="user-conetnt">User: {{currentUser.name}}
-        <button class="btn btn-default" (click)="logOut()">log out</button>
+<div class="wrapper">
+  <aside>
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" width="60">
     </div>
-</div>
-<div class="content-wrapper">
-    <div class="menu-container">
-        <div *ngIf="isUser()">
-            <p>
-                <a [routerLink]="['/userForm/',currentUser.id,'userPermissions']">My permissions</a>
-            </p>
-            <p>
-                <a [routerLink]="['/userForm/',currentUser.id,'userRequestes']">My requestes</a>
-            </p>
+    <nav>
+      <ul *ngIf="isUser()">
+        <li><a [routerLink]="['/userForm/',currentUser.id,'userPermissions']" routerLinkActive="active">My permissions</a></li>
+        <li><a [routerLink]="['/userForm/',currentUser.id,'userRequestes']" routerLinkActive="active">My requestes</a></li>
+      </ul>
+      <ul *ngIf="isApprover()">
+        <li><a [routerLink]="['/userForm/',currentUser.id,'requests']" routerLinkActive="active">Users Requests</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <header>
+    <div class="user">
+        <img src="../../../assets/images/user.png" width="35">
+        <div>
+          <p>Hello</p>
+          <p>{{currentUser.name}}</p>
         </div>
-        <div *ngIf="isApprover()">
-            <p>
-                <a [routerLink]="['/userForm/',currentUser.id,'requests']">Users Requests</a>
-            </p>
-
-        </div>
     </div>
-    <div class="manage-container" *ngIf="currentUser.isLogin!=undefined">
-        <router-outlet></router-outlet>
+    <div class="logout" (click)="logOut()">
+      <img src="../../../assets/images/logout.svg" width="40">
     </div>
-
+  </header>
+  <main *ngIf="currentUser.isLogin!=undefined">
+    <router-outlet></router-outlet>
+  </main>
 </div>

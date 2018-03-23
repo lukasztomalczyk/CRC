@@ -1,6 +1,9 @@
-<app-add-permission (addedPermission)="addedPermissionListener($event)"></app-add-permission>
+<div class="title">
+  <h2>My requests</h2>
+  <app-add-permission (addedPermission)="addedPermissionListener($event)"></app-add-permission>
+</div>
+<div class="white-bg">
 <table class="table">
-  
         <thead>
             <tr>
                 <th>Server Name</th>
@@ -24,3 +27,4 @@
         </tr>
     </tbody>
 </table>
+</div>
