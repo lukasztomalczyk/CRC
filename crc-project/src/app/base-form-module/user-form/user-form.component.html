@@ -26,6 +26,13 @@
     </div>
   </header>
   <main *ngIf="currentUser.isLogin!=undefined">
+         <!-- 3. dodać komponent, który  wyświetli powitanie dla aktualnie zalogowanego użytkownika-->
     <router-outlet></router-outlet>
   </main>
+</div>
+<div class="user-information-container">
+    <div class="empty"></div>
+    <div class="user-conetnt">User: {{currentUser.name}}
+        <button class="btn btn-default" (click)="logOut()">log out</button>
+    </div>
 </div>

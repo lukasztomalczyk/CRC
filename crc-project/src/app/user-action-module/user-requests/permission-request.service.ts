@@ -14,9 +14,7 @@ export class AddPermissionService {
 
     }
 
-    getServers(): Observable<Array<string>> {
-        return this.http.get<Array<string>>(`${this.baseUri}/servers`);
-    }
+    // 6. request, który pozwoli nam pobrać listę serwerów do wyboru pod adresem : baseUri/servers
 
     getAvailablePermissions(): Observable<Array<string>> {
         return this.http.get<Array<string>>(`${this.baseUri}/permissions`);

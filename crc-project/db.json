@@ -62,49 +62,9 @@
     }
   ],
   "requestes": [
-    {
-      "serverName": "TEST",
-      "serverAddress": "testlogin",
-      "permission": "READ ONLY",
-      "login": "czmok",
-      "status": "Approve",
-      "id": 1
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszek",
-      "permission": "READ ONLY",
-      "additionalInfo": "asd",
-      "login": "staszek",
-      "status": "Reject",
-      "id": 2
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszekapprovw",
-      "permission": "READ ONLY",
-      "login": "staszek",
-      "status": "Approve",
-      "id": 3
-    }
   ],
   "provisioned": [
-    {
-      "serverName": "TEST",
-      "serverAddress": "testlogin",
-      "permission": "READ ONLY",
-      "login": "czmok",
-      "status": "Provisioned",
-      "id": 1
-    },
-    {
-      "serverName": "TEST",
-      "serverAddress": "staszekapprovw",
-      "permission": "READ ONLY",
-      "login": "staszek",
-      "status": "Provisioned",
-      "id": 3
-    }
+   
   ],
   "profile": {
     "name": "typicode"

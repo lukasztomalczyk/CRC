@@ -22,7 +22,8 @@ import { BaseFormModule } from './base-form-module/base-form-module.module';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  //1. Utworzyć rout login, aby wczytał domyślnie widok logowania i do niego przekierowywał jeżeli zostanie wpisany zły adres url
+  //8. Wydzielić logowanie do osobnego modułu
   {
     path: 'userForm/:userId', component: UserFormComponent, canActivate: [CanActivateUser],
     children: [
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   { path: '**', component: LoginComponent },
